@@ -1,0 +1,2 @@
+landscape: width=708 ,height=335
+portrait:  width=335 ,height=708
