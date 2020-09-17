@@ -7,7 +7,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -145,6 +145,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600166595644</updated>
       <workItem from="1600166598607" duration="5854000" />
+      <workItem from="1600326372509" duration="9378000" />
     </task>
     <servers />
   </component>
@@ -152,10 +153,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1616" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1600166598744">
+    <state x="1616" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1600326374936">
       <screen x="0" y="0" width="3840" height="1040" />
     </state>
-    <state x="1616" y="344" key="com.intellij.ide.util.TipDialog/0.0.3840.1040@0.0.3840.1040" timestamp="1600166598744" />
+    <state x="1616" y="344" key="com.intellij.ide.util.TipDialog/0.0.3840.1040@0.0.3840.1040" timestamp="1600326374936" />
     <state x="1616" y="252" width="607" height="536" key="find.popup" timestamp="1600166775826">
       <screen x="0" y="0" width="3840" height="1040" />
     </state>
