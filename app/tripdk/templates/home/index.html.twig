@@ -16,21 +16,36 @@
         </div>
     </header>
 
-
 {% endblock %}
 
 {% block main %}
     <div class="container p-3 mt-5">
-    {#    <h1>Hello {{ controller_name }}! ✅</h1>#}
-{#        <div class="d-flex flex-row">#}
-{#        <div class="d-flex flex-row flex-wrap justify-content-center">#}
-        <div class="card-columns">
-        {% for image in images|sort %}
-{#            <div class="mb-3 col-lg-3 col-md-3 col-xs-3 d-flex align-self-start justify-content-around">#}
+        <div class="card-columns gallery">
+
+        {% for gal in gallery %}
             <div class="card">
-                <img src="{{ image|e }}" class="card-img img-fluid"/>
+{#                <a href="../../gallery/{{ image|e }}" data-toggle="lightBox" data-target="lightBox"></a>#}
+{#                <a href="#lightBox" data-toggle="modal" data-target="#lightBox"></a>#}
+                <a href="../../gallery/20200724_201438.jpg" data-toggle="lightbox" data-gallery="img-gallery">
+                    <img src="{{ gal.image|e }}" class="card-img img-fluid" />
+                </a>
+                <h4>{{ gal.info }}</h4>
             </div>
         {% endfor %}
         </div>
+
+        <div class="modal fade" id="lightbox" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <img src="//media.tenor.com/images/556e9ff845b7dd0c62dcdbbb00babb4b/tenor.gif" alt="" id="image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
+
