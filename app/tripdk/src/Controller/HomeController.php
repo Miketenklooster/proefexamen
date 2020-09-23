@@ -9,13 +9,13 @@ use App\Entity\Gallery;
 
 class HomeController extends AbstractController
 {
-    private $repository;
+//    private $repository;
 
-    public function __construct()
-    {
+//    public function __construct()
+//    {
 //        $this->repository = $this->getDoctrine()->getRepository(Gallery::class);
-        $this->repository = "test";
-    }
+//        $this->repository = "test";
+//    }
 
     /**
      * @Route("/", name="home")
@@ -29,13 +29,9 @@ class HomeController extends AbstractController
         $gall = [];
 
         foreach ($gallery as $gal){
-            $image_name = strval($gal->getImage());
-            rewind($gal->getImage());
-
             $gall[] =
                 [
-                    'image_name' => $image_name,
-                    'image'      => "data:image/png;base64," . base64_encode(stream_get_contents($gal->getImage())),
+                    'image_name' => $gal->getImageName(),
                     'info'       => $gal->getInfo(),
                     'category'   => $gal->getCategory(),
                 ];

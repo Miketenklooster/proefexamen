@@ -1,51 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}TripDK{% endblock %}
 
 {% block header %}
-
     <!-- Full Page Image Header with Vertically Centered Content -->
     <header class="masthead">
-        <div class="container h-100">
+        <div class="container-fluid h-100">
+            <button id="login" class="btn btn-lg btn-dark float-right m-3 login-button">Login</button>
             <div class="row h-75 align-items-center">
                 <div class="col-12 text-center">
                     <h1 class="font-weight-light">Vacation Denmark</h1>
-                    <p class="lead">These are the foto's from when my little brother and I went on a vacation in Denmark</p>
+                    <p class="lead">These are the foto's from when my little brother and I went on a trip in Denmark</p>
                 </div>
             </div>
         </div>
     </header>
-
 {% endblock %}
 
 {% block main %}
-    <div class="container p-3 mt-5">
-        <div class="card-columns gallery">
+        <main>
+            <section class="filter text-center">
+                <button class="my-btn active" id="all">All</button>
+                <button class="my-btn" id="city">City</button>
+                <button class="my-btn" id="beach">Beach</button>
+                <button class="my-btn" id="biking">Biking</button>
+                <button class="my-btn" id="viking">Viking</button>
+                <button class="my-btn" id="landscape">Landscape</button>
+            </section>
+            <!-- The image gallery which width is based of the total screen width -->
+            <section class="masonry">
+                {% for gal in gallery %}
+                    <article class="item {{ gal.category }}">
+                        <a href="../gallery/{{ gal.image_name }}" data-fancybox="images" data-caption="{{ gal.info }}">
+                            <img src="../low_res_gallery/{{ gal.image_name }}" class="img-fluid radius">
+                        </a>
+                    </article>
+                {% endfor %}
+            </section>
+        </main>
 
-        {% for gal in gallery %}
-            <div class="card">
-{#                <a href="../../gallery/{{ image|e }}" data-toggle="lightBox" data-target="lightBox"></a>#}
-{#                <a href="#lightBox" data-toggle="modal" data-target="#lightBox"></a>#}
-                <a href="../../gallery/20200724_201438.jpg" data-toggle="lightbox" data-gallery="img-gallery">
-                    <img src="{{ gal.image|e }}" class="card-img img-fluid" />
-                </a>
-                <h4>{{ gal.info }}</h4>
-            </div>
-        {% endfor %}
-        </div>
-
-        <div class="modal fade" id="lightbox" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <img src="//media.tenor.com/images/556e9ff845b7dd0c62dcdbbb00babb4b/tenor.gif" alt="" id="image" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 {% endblock %}
 
+{% block footer %}
+    <!-- Footer -->
+    <footer class="font-weight-lighter bg-grey mt-5">
+        <!-- Copyright -->
+        <div class="text-center p-3">
+            <p>
+                <small>© 2020 Copyright by Mike & Luke ten Klooster. <br/> All Rights Reserved</small>
+            </p>
+        </div>
+    </footer>
+{% endblock %}

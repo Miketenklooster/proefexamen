@@ -28,9 +28,9 @@ class Gallery
     private $category;
 
     /**
-     * @ORM\Column(type="blob")
+     * @ORM\Column(type="string", length=30)
      */
-    private $image;
+    private $image_name;
 
     /**
      * @return int|null
@@ -79,20 +79,20 @@ class Gallery
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getImage()
+    public function getImageName(): ?string
     {
-        return $this->image;
+        return $this->image_name;
     }
 
     /**
-     * @param $image
+     * @param string $image_name
      * @return $this
      */
-    public function setImage($image): self
+    public function setImageName(string $image_name): self
     {
-        $this->image = $image;
+        $this->image_name = $image_name;
 
         return $this;
     }
