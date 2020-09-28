@@ -63,16 +63,16 @@ body {
 .radius {
     border-radius: 15px ;
     /* HOVER OFF */
-    -webkit-transition: border-radius 1s;
+    -webkit-transition: border-radius .5s;
 }
 .radius:hover {
     border-radius: 15px 60px 30px 40px;
     /* HOVER ON */
-    -webkit-transition: border-radius 1s;
+    -webkit-transition: border-radius .5s;
 }
 
 /* Masonry on huge screens */
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1640px) {
     .masonry {
         column-count: 4;
         max-width: 75vw;
@@ -84,7 +84,7 @@ body {
 }
 
 /* Masonry on large screens */
-@media only screen and (max-width: 1439px) and (min-width: 1024px){
+@media only screen and (max-width: 1639px) and (min-width: 1024px){
     .masonry {
         column-count: 3;
         max-width: 75vw;

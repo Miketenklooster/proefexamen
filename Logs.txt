@@ -4,3 +4,7 @@ Do 10-09-2020, De foto's lagere resolutie gemaakt, database gemaakt.
 Vr 11-09-2020, Analyse opgestuurd naar de klant.
 Di 15-09-2020, Database gekoppelt aan de site, en data laten zien.
 Do 17-09-2020, Gallery werkt en heb ook een header toegevoegd.
+Di 22-09-2020, Hele website gerevamped.
+Wo 23-09-2020, Animations toegevoegd aan de foto's.
+Vr 25-09-2020, Nieuwe Analyse versie.
+Ma 26-09-2020, Design document gemaakt.
