@@ -18,7 +18,6 @@
         </div>
     </header>
 {% endblock %}
-
 {% block main %}
         <main>
             <section class="filter text-center">
@@ -40,31 +39,6 @@
                 {% endfor %}
             </section>
         </main>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div id="modal-body" class="modal-body">
-{#                    {% include "security/login.html.twig" %}#}
-                    {% block modal %}
-
-                    {% endblock %}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 {% endblock %}
 
 {% block footer %}
@@ -77,26 +51,4 @@
             </p>
         </div>
     </footer>
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    <script>
-        /**
-         * ajax
-         */
-        // $("a").click(function(e) {
-        //     let href = this.href;
-        //     e.preventDefault();
-        //     $.ajax({
-        //         url: href,
-        //         success: function (result) {
-        //             document.getElementById('modal-body').innerHTML = result;
-        //             // document.querySelector('main').innerHTML = result;
-        //             // $("html").innerHTML = result;
-        //             // window.history.pushState("", "", href);
-        //         }
-        //     });
-        // });
-    </script>
 {% endblock %}

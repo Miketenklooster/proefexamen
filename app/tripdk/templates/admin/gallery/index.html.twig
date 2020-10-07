@@ -1,9 +1,9 @@
 {% extends 'admin.html.twig' %}
 
-{% block stylesheet %}
+{% block stylesheets %}
+    {{ parent() }}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 {% endblock %}
-
 
 {% block header %}
     <h1 class="text-center">Gallery index</h1>
@@ -47,6 +47,7 @@
 {% endblock %}
 
 {% block javascripts %}
+    {{ parent() }}
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="{{ asset('../js/script.js') }}"></script>
 {% endblock %}

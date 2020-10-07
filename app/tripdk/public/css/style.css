@@ -54,12 +54,22 @@ body {
 .masonry {
     margin: 1.5em auto;
     max-width: 95vw;
-    -webkit-transition: border-radius 1s;
+    -webkit-transition: border-radius 2s;
     /*column-gap: 1em;*/
+}
+
+/* The FadeIn */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 /* The Masonry Brick */
 .item {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    -moz-animation: fadeIn ease 3s;
+    -o-animation: fadeIn ease 3s;
     padding: 1em;
     border-radius: 15px 50px;
 }
