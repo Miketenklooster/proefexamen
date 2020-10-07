@@ -1,0 +1,43 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+    <section class="container-fluid">
+        <article class="text-center m-5">
+            <h1>Welcome back</h1>
+            <h3>What would you like to do today?</h3>
+            <hr>
+        </article>
+        <section class="d-flex justify-content-center flex-wrap">
+            <section class="dashboard-block m-5">
+                <article class="row d-flex align-items-center">
+                    <section class="col-xl-4 text-center">
+                        <a href="/admin/user" class="link">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                        </a>
+                    </section>
+                    <section class="col-xl">
+                      <h2>
+                          <a href="/admin/user" class="color-white">Would you like to visit the Users?</a>
+                      </h2>
+                    </section>
+                </article>
+            </section>
+            <section class="dashboard-block m-5">
+                <article class="row d-flex align-items-center">
+                    <section class="col-xl-4 text-center">
+                        <a href="/admin/gallery" class="link">
+                            <i class="fa fa-images" aria-hidden="true"></i>
+                        </a>
+                    </section>
+                    <section class="col-xl">
+                        <h2>
+                            <a href="/admin/gallery" class="color-white">Would you like to visit the Foto's?</a>
+                        </h2>
+                    </section>
+                </article>
+            </section>
+        </section>
+    </section>
+{% endblock %}

@@ -7,7 +7,10 @@ let $btns = $('.my-btn').click(function() {
     } else {
         let $el = $('.' + this.id).show();
         $('.masonry > article').not($el).hide();
+        $('.masonry > article').removeClass('show');
+        $('.masonry > article.'+this.id).addClass('show');
     }
     $btns.removeClass('active');
     $(this).addClass('active');
+
 });

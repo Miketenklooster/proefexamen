@@ -6,6 +6,11 @@ body {
     background: #e8eaec;
 }
 
+/* The transition */
+.show > a > img {
+    transition:all 1s;
+}
+
 /* The Filter */
 .filter {
     padding-top: 2rem;
@@ -106,3 +111,4 @@ body {
         max-width: 90vw;
     }
 }
+

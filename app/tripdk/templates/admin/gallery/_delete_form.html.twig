@@ -1,0 +1,8 @@
+<form method="post" action="{{ path('gallery_delete', {'id': gallery.id}) }}" >
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ gallery.id) }}">
+    <div class="text-right">
+        <button type="button" class="btn btn-secondary">No</button>
+        <button type="submit" class="btn btn-danger">Yes</button>
+    </div>
+</form>

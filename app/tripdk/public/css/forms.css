@@ -1,0 +1,31 @@
+input[type="text"], .label
+{
+    border: 0;
+    border-bottom: 1px solid grey;
+    outline: 0;
+    border-radius: 0;
+}
+
+input[type="text"]:focus, .label:focus
+{
+    box-shadow: none;
+    border-bottom: 1px solid dodgerblue;
+}
+
+.custom-file-label
+{
+    border-radius: 0;
+    outline: 0 none;
+    border-right: inherit;
+}
+.custom-file-label::after
+{
+    left: 0;
+    right: auto;
+    border-radius: 10px 0 0;
+}
+
+.pointer
+{
+    cursor: pointer;
+}

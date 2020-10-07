@@ -1,0 +1,178 @@
+{#{% extends 'base.html.twig' %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Tripdk{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('../css/forms.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('../css/admin.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('../css/hamburger.css') }}"/>
+    <link href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+{% block body %}
+    <div id="wrapper">
+        <div class="sidebar-container text-nowrap">
+            <div class="sidebar-logo">
+                Tripdk
+            </div>
+            <ul class="sidebar-navigation">
+                <li class="header">Logged in as</li>
+                <li>
+                    <a href="/admin" class="nav-item">
+                        <i class="fa fa-user" aria-hidden="true"></i> {{ app.user.username }}
+                    </a>
+                </li>
+                <li class="header">Navigation</li>
+                <li>
+                    <a href="/admin" class="nav-item">
+                        <i class="fa fa-home" aria-hidden="true"></i> Homepage
+                    </a>
+                </li>
+                <li class="header">Subjects</li>
+                <li>
+                    <a href="/admin/user" class="nav-item">
+                        <i class="fa fa-users" aria-hidden="true"></i> Users
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/gallery" class="nav-item">
+                        <i class="fa fa-images" aria-hidden="true"></i> Gallery
+                    </a>
+                </li>
+                <li class="header align-bottom">Logout</li>
+                <li>
+                    <a href="/admin/logout" class="nav-item">
+                        <i class="fa fa-power-off" aria-hidden="true"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="close-button fixed-top mb-5">
+            <button id="menu-toggle" class="hamburger hamburger--elastic is-active" type="button"
+                    aria-label="Menu" aria-controls="navigation">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+            </button>
+        </div>
+        <div class="content-container">
+
+            <div class="container-fluid">
+                <header class="mt-5">
+                        {% block header %}{% endblock %}
+                </header>
+                <main>
+                    {% block main %}{% endblock %}
+                </main>
+                <footer>
+                    {% block footer %}{% endblock %}
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+        {# variables #}
+        const hamburgers = document.querySelectorAll(".hamburger");
+        let w;
+
+
+        $("body").on("click", ".popover-a", function(e) { e.preventDefault() });
+        $(function () {
+            $('[data-toggle="popover"]').popover({
+                html:true,
+                sanitize: false,
+            });
+        });
+
+        // if window resize call responsive function
+        $(window).resize(function(e) {
+            screen_resize();
+        });
+
+        $(document).ready(function(){
+            screen_resize();
+            $("#menu-toggle").click(function(e){
+                e.preventDefault();
+                $("#wrapper").toggleClass("menu-closed");
+            });
+        });
+        function screen_resize() {
+            let w = parseInt(window.innerWidth);
+            if(w <= 576) {
+                forEach(hamburgers, function(hamburger) {
+                    if (hamburger.classList.contains('is-active')){
+                        hamburger.classList.toggle("is-active");
+                    }
+                });
+                document.getElementById("wrapper").classList.remove("menu-closed");
+        }
+            else{
+                forEach(hamburgers, function(hamburger) {
+                    if (!hamburger.classList.contains('is-active') && !document.getElementById("wrapper").classList.contains("menu-closed")) {
+                        hamburger.classList.add('is-active');
+                    }
+                    document.getElementById("wrapper").classList.remove("menu-closed");
+
+                });
+            }
+        }
+
+        // Name of the file appear on select
+        $(".custom-file-input").on("change", function() {
+            let fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+
+        /**
+         * forEach implementation for Objects/NodeLists/Arrays, automatic type loops and context options
+         *
+         * @private
+         * @author Todd Motto
+         * @link https://github.com/toddmotto/foreach
+         * @param {Array|Object|NodeList} collection - Collection of items to iterate, could be an Array, Object or NodeList
+         * @callback requestCallback      callback   - Callback function for each iteration.
+         * @param {Array|Object|NodeList} scope=null - Object/NodeList/Array that forEach is iterating over, to use as the this value when executing callback.
+         * @returns {}
+         */
+        let forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(let c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(let e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
+
+        if (hamburgers.length > 0) {
+            forEach(hamburgers, function(hamburger) {
+
+                hamburger.addEventListener("click", function() {
+                    this.classList.toggle("is-active");
+                }, false);
+            });
+        }
+
+        /**
+         * ajax
+         */
+        // $("a").click(function(e) {
+        //     let href = this.href;
+        //     e.preventDefault();
+        //     $.ajax({
+        //         url: href,
+        //         success: function (result) {
+        //             document.querySelector('main').innerHTML = result;
+        //             // $("html").innerHTML = result;
+        //             window.history.pushState("", "", href);
+        //         }
+        //     });
+        // })
+
+    </script>
+    {% block javascripts %}
+    {% endblock %}
+{% endblock %}
+</body>
+</html>
+

@@ -1,0 +1,86 @@
+body{
+    height:100vh;
+    min-height:550px;
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    overflow-y: hidden;
+}
+
+input[type="email"], input[type="password"]
+{
+    border: 0;
+    border-bottom: 1px solid grey;
+    outline: 0;
+    border-radius: 0;
+}
+
+input[type="email"]:focus, input[type="password"]:focus
+{
+    box-shadow: none;
+}
+
+.login-reg-panel{
+    position: relative;
+    top: 50vh;
+    transform: translateY(-50%);
+    text-align:center;
+    width:70vw;
+    right:0;left:0;
+    margin:auto;
+    height:400px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.login-info-box{
+    width:30%;
+    padding:0 50px;
+    top:20vh;
+    right:0;
+    position:absolute;
+    text-align:left;
+
+}
+
+.white-panel{
+    background-color: rgba(255,255, 255, 1);
+    height:500px;
+    position:absolute;
+    top:-50px;
+    width:45%;
+    right:calc(50% - 50px);
+    transition:.3s ease-in-out;
+    z-index:0;
+    box-shadow: 0 0 15px 9px #00000096;
+}
+
+.login-show{
+    z-index: 1;
+    display:none;
+    opacity:0;
+    transition:0.3s ease-in-out;
+    color:#242424;
+    text-align:left;
+    padding:50px;
+}
+
+.show-log-panel{
+    display:block;
+    opacity:0.9;
+}
+
+@media (max-width: 991px) {
+    .white-panel{
+        background-color: rgba(255,255, 255, 1);
+        height:500px;
+        position:absolute;
+        top:-50px;
+        width:90%;
+        right:calc(20% - 50px);
+        transition:.3s ease-in-out;
+        z-index:0;
+        box-shadow: 0 0 15px 9px #00000096;
+    }
+}
