@@ -1,4 +1,6 @@
-.container-fluid{
+/* Add to container-fluid */
+.container-fluid
+{
     height:100vh;
     min-height:550px;
     background-image: url(../images/background.jpg);
@@ -9,7 +11,8 @@
     overflow-y: hidden;
 }
 
-input[type="email"], input[type="password"]
+/* Set Border */
+input[type="email"], input[type="password"], input[type="text"]
 {
     border: 0;
     border-bottom: 1px solid grey;
@@ -17,12 +20,15 @@ input[type="email"], input[type="password"]
     border-radius: 0;
 }
 
-input[type="email"]:focus, input[type="password"]:focus
+/* Set Border :focus */
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus
 {
     box-shadow: none;
 }
 
-.login-reg-panel{
+/* The Big Rectangle */
+.login-reg-panel
+{
     position: relative;
     top: 50vh;
     transform: translateY(-50%);
@@ -34,17 +40,20 @@ input[type="email"]:focus, input[type="password"]:focus
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.login-info-box{
+/* Login info box */
+.login-info-box
+{
     width:30%;
     padding:0 50px;
     top:20vh;
     right:0;
     position:absolute;
     text-align:left;
-
 }
 
-.white-panel{
+/* The White Panel */
+.white-panel
+{
     background-color: rgba(255,255, 255, 1);
     height:500px;
     position:absolute;
@@ -56,7 +65,9 @@ input[type="email"]:focus, input[type="password"]:focus
     box-shadow: 0 0 15px 9px #00000096;
 }
 
-.login-show{
+/* Login Box Show */
+.login-show
+{
     z-index: 1;
     display:none;
     opacity:0;
@@ -66,13 +77,18 @@ input[type="email"]:focus, input[type="password"]:focus
     padding:50px;
 }
 
-.show-log-panel{
+/* Show form */
+.show-log-panel
+{
     display:block;
     opacity:0.9;
 }
 
-@media (max-width: 991px) {
-    .white-panel{
+/* Set max-width for certain properties */
+@media (max-width: 991px)
+{
+    .white-panel
+    {
         background-color: rgba(255,255, 255, 1);
         height:500px;
         position:absolute;

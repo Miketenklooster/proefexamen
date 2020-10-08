@@ -2,7 +2,7 @@
 const hamburgers = document.querySelectorAll(".hamburger");
 let w;
 
-
+// Popover onclick
 $("body").on("click", ".popover-a", function(e) { e.preventDefault() });
 $(function () {
     $('[data-toggle="popover"]').popover({
@@ -25,6 +25,7 @@ $(document).ready(function(){
     });
 });
 
+// Screen Size, adds and removes classes based on the screen width
 function screen_resize() {
     let w = parseInt(window.innerWidth);
     if(w <= 576) {
@@ -41,7 +42,6 @@ function screen_resize() {
                 hamburger.classList.add('is-active');
             }
             document.getElementById("wrapper").classList.remove("menu-closed");
-
         });
     }
 }
@@ -65,17 +65,18 @@ $(".custom-file-input").on("change", function() {
  */
 let forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(let c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(let e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
 
-if (hamburgers.length > 0) {
+if (hamburgers.length > 0)
+{
     forEach(hamburgers, function(hamburger) {
-
-        hamburger.addEventListener("click", function() {
+        hamburger.addEventListener("click", function()
+        {
             this.classList.toggle("is-active");
         }, false);
     });
 }
 
  /**
- * ajax
+ * ajax is for later improvement
  */
 // $("a").click(function(e) {
 //     let href = this.href;

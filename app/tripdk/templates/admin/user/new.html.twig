@@ -10,7 +10,7 @@
         <div id="user">
             <div class="form-group">
                 <label for="user_email" class="required">Email</label>
-                <input type="text" id="user_email" name="user[email]" required="required" maxlength="180" class="form-control" />
+                <input type="email" id="user_email" name="user[email]" required="required" maxlength="180" class="form-control" />
             </div><fieldset class="form-group"><legend class="col-form-label required">Roles</legend>
                 <div id="user_roles">
                     <div class="form-check">
@@ -22,7 +22,7 @@
                         <label class="form-check-label" for="user_roles_1">user</label>
                     </div></div></fieldset><div class="form-group">
                 <label for="user_password" class="required">Password</label>
-                <input type="text" id="user_password" name="user[password]" required="required" class="form-control" />
+                <input type="password" id="user_password" name="user[password]" required="required" class="form-control" />
             </div>
             <input type="hidden" id="user__token" name="user[_token]" value="{{ csrf_token('user') }}"/>
         </div>

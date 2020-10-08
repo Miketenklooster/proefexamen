@@ -1,28 +1,33 @@
-* {
+*
+{
     box-sizing: border-box;
 }
 
-body {
+body
+{
     background: #e8eaec;
 }
 
 /* The transition */
-.show > a > img {
+.show > a > img
+{
     transition:all 1s;
 }
 
 /* The Filter */
-.filter {
+.filter
+{
     padding-top: 2rem;
 }
 
 /* The Buttons */
-.login-button {
+.login-button
+{
     background: transparent;
     border-radius: 10px;
 }
-
-.my-btn {
+.my-btn
+{
     border: none;
     outline: none;
     padding: 12px 16px;
@@ -30,18 +35,19 @@ body {
     border-radius: 4px 12px ;
     cursor: pointer;
 }
-
-.my-btn:hover {
+.my-btn:hover
+{
     background-color: #ddd;
 }
-
-.my-btn.active {
+.my-btn.active
+{
     background-color: #666;
     color: white;
 }
 
 /* The Masthead */
-.masthead {
+.masthead
+{
     height: 50vh;
     min-height: 200px;
     background-image: url('https://images.unsplash.com/photo-1534684105949-56869170677f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&h=1080&q=80');
@@ -51,21 +57,23 @@ body {
 }
 
 /* The Masonry Container */
-.masonry {
+.masonry
+{
     margin: 1.5em auto;
     max-width: 95vw;
     -webkit-transition: border-radius 2s;
-    /*column-gap: 1em;*/
 }
 
 /* The FadeIn */
-@keyframes fadeIn {
+@keyframes fadeIn
+{
     from { opacity: 0; }
     to   { opacity: 1; }
 }
 
 /* The Masonry Brick */
-.item {
+.item
+{
     animation: fadeIn ease 3s;
     -webkit-animation: fadeIn ease 3s;
     -moz-animation: fadeIn ease 3s;
@@ -75,48 +83,59 @@ body {
 }
 
 /* The Border-Radius */
-.radius {
+.radius
+{
     border-radius: 15px ;
     /* HOVER OFF */
     -webkit-transition: border-radius .5s;
 }
-.radius:hover {
+.radius:hover
+{
     border-radius: 15px 60px 30px 40px;
     /* HOVER ON */
     -webkit-transition: border-radius .5s;
 }
 
 /* Masonry on huge screens */
-@media only screen and (min-width: 1640px) {
-    .masonry {
+@media only screen and (min-width: 1640px)
+{
+    .masonry
+    {
         column-count: 4;
         max-width: 75vw;
     }
 
-    .radius:hover {
+    .radius:hover
+    {
         border-radius: 15px 120px 30px 50px;
     }
 }
 
 /* Masonry on large screens */
-@media only screen and (max-width: 1639px) and (min-width: 1024px){
-    .masonry {
+@media only screen and (max-width: 1639px) and (min-width: 1024px)
+{
+    .masonry
+    {
         column-count: 3;
         max-width: 75vw;
     }
 }
 
 /* Masonry on medium-sized screens */
-@media only screen and (max-width: 1023px) and (min-width: 768px) {
-    .masonry {
+@media only screen and (max-width: 1023px) and (min-width: 768px)
+{
+    .masonry
+    {
         column-count: 2;
         max-width: 82vw;
     }
 }
 
 /* Masonry on small screens */
-@media only screen and (max-width: 767px) and (min-width: 540px) {
-    .masonry {
+@media only screen and (max-width: 767px) and (min-width: 540px)
+{
+    .masonry
+    {
         column-count: 2;
         max-width: 90vw;
     }

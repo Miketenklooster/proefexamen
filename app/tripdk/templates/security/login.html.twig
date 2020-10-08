@@ -1,8 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
+    <link href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('../css/login.css') }}"/>
 {% endblock %}
+
 {% block main %}
     <section class="container-fluid ">
         <section class="login-reg-panel row align-items-center">
@@ -24,12 +26,14 @@
                         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
                         <section class="form-group">
                             <label for="inputEmail">Email</label>
-                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required>
                         </section>
                         <section class="form-group">
                             <label for="inputPassword">Password</label>
-                            <input type="password" name="password" id="inputPassword" class="form-control" required>
-
+                            <div class="d-flex">
+                                <input type="password" name="password" id="inputPassword" class="form-control" required>
+                                <label id="labelIcon" for="inputPassword"><i id="icon" class="far fa-eye-slash"></i></label>
+                            </div>
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                         </section>
                         <section class="form-group checkbox mb-3">
@@ -44,6 +48,6 @@
                     </form>
                 </article>
             </section>
-        </se>
+        </section>
     </section>
 {% endblock %}

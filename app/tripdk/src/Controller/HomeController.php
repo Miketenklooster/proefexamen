@@ -10,14 +10,6 @@ use App\Entity\User;
 
 class HomeController extends AbstractController
 {
-//    private $repository;
-
-//    public function __construct()
-//    {
-//        $this->repository = $this->getDoctrine()->getRepository(Gallery::class);
-//        $this->repository = "test";
-//    }
-
     /**
      * @Route("/", name="home")
      */
@@ -43,6 +35,4 @@ class HomeController extends AbstractController
             'gallery'           => $gall,
         ]);
     }
-
-
 }

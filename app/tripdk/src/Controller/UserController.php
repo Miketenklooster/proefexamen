@@ -18,6 +18,10 @@ class UserController extends AbstractController
 {
     private $passwordEncoder;
 
+    /**
+     * UserController constructor.
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     */
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
@@ -87,13 +91,9 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            $password = $form->get('password')->getData();
-            $user->setPassword($this->passwordEncoder->encodePassword($user, $password));
-//            $em = $this->getDoctrine()->getManager();
-//            $user = $em->getRepository(User::class)->find($users->getId());
+//            $password = $form->get('password')->getData();
+//            $user->setPassword($this->passwordEncoder->encodePassword($user, $password));
             $this->getDoctrine()->getManager()->flush();
-//            $user->setEmail($request->request->get());
             return $this->redirectToRoute('user_index');
         }
 

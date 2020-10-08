@@ -14,7 +14,14 @@
             </div>
             <div class="form-group">
                 <label for="gallery_category" class="required">Category</label>
-                <input type="text" id="gallery_category" name="gallery[category]" required="required" maxlength="100" class="form-control" />
+                <select class="form-control select-picker" id="gallery_category" name="gallery[category]">
+                    <option value="city">City</option>
+                    <option value="beach">Beach</option>
+                    <option value="biking">Biking</option>
+                    <option value="viking">Viking</option>
+                    <option value="landscape">Landscape</option>
+                </select>
+{#                <input type="text" id="gallery_category" name="gallery[category]" required="required" maxlength="100" class="form-control" />#}
             </div>
             <div class="form-group">
                 <label for="gallery_image_name">Upload images</label>
@@ -30,3 +37,12 @@
         </div>
     </form>
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        $('.select-picker').val('{{ gallery.category }}');
+    </script>
+{% endblock %}
+

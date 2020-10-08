@@ -54,7 +54,6 @@ class GalleryController extends AbstractController
                 // this is needed to safely include the file name as part of the URL
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
-
                 $image_p = $resize->resizeImage($imageFile);
 
                 // Move the file to the directory where images are stored
@@ -69,17 +68,14 @@ class GalleryController extends AbstractController
                     // ... handle exception if something happens during file upload
                     throw new FileException($e);
                 }
-
                 $gallery->setImageName($newFilename);
             }
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($gallery);
             $entityManager->flush();
 
             return $this->redirectToRoute('gallery_index');
         }
-
         return $this->render('admin/gallery/new.html.twig', [
             'gallery' => $gallery,
         ]);
@@ -118,9 +114,7 @@ class GalleryController extends AbstractController
                 // this is needed to safely include the file name as part of the URL
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
-
-               $image_p = $resize->resizeImage($imageFile);
-
+                $image_p = $resize->resizeImage($imageFile);
                 $file = $this->getParameter("image_gallery"). '/' . $gallery->getImageName();
                 $file2 = $this->getParameter("low_res_gallery"). '/' . $gallery->getImageName();
 

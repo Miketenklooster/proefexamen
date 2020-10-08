@@ -49,7 +49,10 @@
 {% block javascripts %}
     {{ parent() }}
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <script src="{{ asset('../js/script.js') }}"></script>
+    <script>
+        // sets the hash of the fancybox on false
+        $.fancybox.defaults.hash = false;
+    </script>
 {% endblock %}
 
 
