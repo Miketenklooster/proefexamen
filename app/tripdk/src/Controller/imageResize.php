@@ -9,32 +9,55 @@ class imageResize
     /**
      * Resize an image and keep the proportions
      * @param string $filename
-     * @param integer $max_width
-     * @param integer $max_height
      * @return false|resource
      */
     function resizeImage($filename)
     {
-        list($orig_width, $orig_height) = getimagesize($filename);
+//        $image = imagecreatefromstring(file_get_contents($filename));
+        $image = imagecreatefromjpeg($filename);
 
-        if ($orig_width > $orig_height) {
+        list($orig_width, $orig_height) = getimagesize($filename);
+//        dd(getimagesize($filename));
+
+        $exif = exif_read_data($filename);
+
+        $list = $this->imageCheck($orig_width, $orig_height);
+        $width = $list[0];
+        $height = $list[1];
+
+        if(!empty($exif['Orientation'])) {
+            switch ($exif['Orientation']) {
+                case 6:
+                    $portrait = true;
+                    $width = 1494;
+                    $height = 708;
+                    break;
+            }
+        }
+
+        $image_p = imagecreatetruecolor($width, $height);
+
+        imagecopyresampled($image_p, $image, 0, 0, 0, 0,
+            $width, $height, $orig_width, $orig_height);
+
+        if($portrait){
+            $image_p = imagerotate($image_p,-90,0);
+        }
+
+        return $image_p;
+    }
+
+    function imageCheck($width, $height){
+        if ($width > $height) {
             $width = 708;
             $height = 335;
-        } else if ($orig_width == $orig_height) {
+        } else if ($width == $height) {
             $width = 708;
             $height = 708;
         } else {
             $width = 708;
             $height = 1494;
         }
-
-        $image_p = imagecreatetruecolor($width, $height);
-
-        $image = imagecreatefromjpeg($filename);
-
-        imagecopyresampled($image_p, $image, 0, 0, 0, 0,
-            $width, $height, $orig_width, $orig_height);
-
-        return $image_p;
+        return [$width,$height];
     }
 }
