@@ -13,15 +13,13 @@ class imageResize
      */
     function resizeImage($filename)
     {
-//        $image = imagecreatefromstring(file_get_contents($filename));
         $image = imagecreatefromjpeg($filename);
 
         list($orig_width, $orig_height) = getimagesize($filename);
-//        dd(getimagesize($filename));
 
         $exif = exif_read_data($filename);
 
-        $list = $this->imageCheck($orig_width, $orig_height);
+        $list = $this->imageSizeCheck($orig_width, $orig_height);
         $width = $list[0];
         $height = $list[1];
 
@@ -47,7 +45,7 @@ class imageResize
         return $image_p;
     }
 
-    function imageCheck($width, $height){
+    function imageSizeCheck($width, $height){
         if ($width > $height) {
             $width = 708;
             $height = 335;

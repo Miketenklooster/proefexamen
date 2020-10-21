@@ -71,7 +71,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/notifier" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
-      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/cache" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
@@ -130,6 +129,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hXo379Ga96BTuu0QUnURTEgI0c" />
@@ -145,17 +145,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\GitHub\proefexamen\app\tripdk\templates" />
+      <recent name="C:\xampp\htdocs\GitHub\proefexamen\app\tripdk\templates\admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\GitHub\proefexamen\app\tripdk\templates\security" />
       <recent name="C:\xampp\htdocs\GitHub\proefexamen\app\tripdk\templates\home" />
       <recent name="C:\xampp\htdocs\GitHub\proefexamen\app\tripdk\templates\admin" />
       <recent name="C:\xampp\htdocs\GitHub\proefexamen\app\tripdk\public" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\GitHub\proefexamen\app\tripdk\templates" />
-      <recent name="C:\xampp\htdocs\GitHub\proefexamen\app\tripdk\templates\admin" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -197,6 +198,8 @@
       <workItem from="1602140588041" duration="14910000" />
       <workItem from="1602236606149" duration="11967000" />
       <workItem from="1602309403287" duration="240000" />
+      <workItem from="1603090651067" duration="11409000" />
+      <workItem from="1603179346957" duration="8430000" />
     </task>
     <servers />
   </component>
@@ -208,15 +211,19 @@
       <screen x="0" y="0" width="3840" height="1040" />
     </state>
     <state x="1650" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.3840.1040@0.0.3840.1040" timestamp="1602059007403" />
-    <state x="1651" y="334" key="NewPhpClassDialog" timestamp="1601983093326">
+    <state x="1651" y="334" key="NewPhpClassDialog" timestamp="1603097361680">
       <screen x="0" y="0" width="3840" height="1040" />
     </state>
-    <state x="1651" y="334" key="NewPhpClassDialog/0.0.3840.1040@0.0.3840.1040" timestamp="1601983093326" />
-    <state x="1616" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1602309404991">
+    <state x="1651" y="334" key="NewPhpClassDialog/0.0.3840.1040@0.0.3840.1040" timestamp="1603097361680" />
+    <state x="1421" y="162" key="SettingsEditor" timestamp="1603091184702">
+      <screen x="0" y="0" width="3840" height="1040" />
+    </state>
+    <state x="1421" y="162" key="SettingsEditor/0.0.3840.1040@0.0.3840.1040" timestamp="1603091184702" />
+    <state x="1616" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1603179352308">
       <screen x="0" y="0" width="3840" height="1040" />
     </state>
     <state x="646" y="273" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1602236605623" />
-    <state x="1616" y="344" key="com.intellij.ide.util.TipDialog/0.0.3840.1040@0.0.3840.1040" timestamp="1602309404991" />
+    <state x="1616" y="344" key="com.intellij.ide.util.TipDialog/0.0.3840.1040@0.0.3840.1040" timestamp="1603179352308" />
     <state x="1729" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600348883978">
       <screen x="0" y="0" width="3840" height="1040" />
     </state>

@@ -42,12 +42,13 @@
       "ext-exif": "*"
     },
     "require-dev": {
-        "symfony/browser-kit": "^5.1",
-        "symfony/css-selector": "^5.1",
+        "symfony/browser-kit": "5.1.*",
+        "symfony/css-selector": "5.1.*",
         "symfony/debug-bundle": "^5.1",
         "symfony/maker-bundle": "^1.0",
         "symfony/phpunit-bridge": "^5.1",
-        "symfony/var-dumper": "^5.1"
+        "symfony/var-dumper": "^5.1",
+      "ext-json": "*"
     },
     "config": {
         "optimize-autoloader": true,
