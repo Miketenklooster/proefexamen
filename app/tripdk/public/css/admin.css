@@ -1,0 +1,199 @@
+/* The Dashboard-block */
+.dashboard-block
+{
+    border-radius: 15px;
+    width:40vw;
+    color: white;
+    opacity: .9;
+    background-color: #1a1a1a;
+    height: 200px;
+    border: 1px solid black;
+}
+
+/* The Link (Icon) */
+.link, .link:hover{
+    color: white;
+    font-size: 8rem;
+}
+
+/* The Color White */
+.color-white, .color-white:hover
+{
+    color: white;
+}
+
+/* The Sidebar Logo */
+.sidebar-logo
+{
+    padding: 10px 15px 10px 30px;
+    font-size: 20px;
+    background-color: #2574A9;
+}
+
+/* The Sidebar List (ul) */
+.sidebar-navigation
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    position: relative;
+}
+
+/* The Sidebar List */
+.sidebar-navigation li
+{
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    line-height: 20px;
+}
+
+/* The Sidebar List a */
+.sidebar-navigation li a
+{
+    padding: 10px 15px 10px 30px;
+    display: block;
+    color: #fff;
+}
+
+/* The Sidebar List with icon */
+.sidebar-navigation li .fa
+{
+    margin-right: 10px;
+}
+
+/* The Sidebar actions */
+.sidebar-navigation li a:active,
+.sidebar-navigation li a:hover,
+.sidebar-navigation li a:focus
+{
+    text-decoration: none;
+    outline: none;
+}
+
+/* The Sidebar ::before */
+.sidebar-navigation li::before
+{
+    background-color: #2574A9;
+    position: absolute;
+    content: '';
+    height: 100%;
+    left: 0;
+    top: 0;
+    -webkit-transition: width 0.2s ease-in;
+    transition: width 0.2s ease-in;
+    width: 3px;
+    z-index: -1;
+}
+
+/* Sidebar li:hover::before */
+.sidebar-navigation li:hover::before
+{
+    width: 100%;
+}
+
+/* The Sidebar Header class */
+.sidebar-navigation .header
+{
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: #151515;
+    padding: 10px 15px 10px 30px;
+}
+
+/* The Sidebar .header::before */
+.sidebar-navigation .header::before
+{
+    background-color: transparent;
+}
+
+/* The Sidebar Container */
+.sidebar-container
+{
+    z-index: 1;
+    opacity:0.9;
+    transition:all .5s;
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* The Content Container */
+.content-container
+{
+    width: 100%;
+    position: absolute;
+    padding-left:260px; /* 250px is the width of the sidebar so for some distance add 10px */
+    transition:all .5s;
+}
+
+/* The Menu Toggle font-size */
+#menu-toggle
+{
+    font-size:.5em;
+}
+
+/* The Close Button positioning */
+.close-button
+{
+    opacity: 0.9;
+    height: 50px;
+    padding-left: 250px;
+    transition:all .5s;
+}
+
+/* Change the width of the sidebar to display it*/
+#wrapper.menu-closed .sidebar-container
+{
+    width:0;
+}
+
+/* Changes the padding the display more or less based on if #wrapper has the class menu-closed */
+#wrapper.menu-closed .content-container, #wrapper.menu-closed .close-button
+{
+    padding-left:0;
+}
+
+/*  */
+@media (max-width: 576px)
+{
+    /* Change the width of the sidebar to not display it*/
+    .sidebar-container
+    {
+        width: 0;
+    }
+
+    /* Changes the padding the display more */
+    .content-container, .close-button
+    {
+        padding-left: 0;
+    }
+
+    /* Change the width of the sidebar to display it*/
+    #wrapper.menu-closed .sidebar-container
+    {
+        width:250px;
+    }
+
+    /* Changes the padding the display less */
+    #wrapper.menu-closed .content-container, #wrapper.menu-closed .close-button
+    {
+        padding-left:250px;
+    }
+}
+
+/* On Class :focus */
+.btn.focus, .btn:focus, .close-button:focus
+{
+    box-shadow: 0 0 0 .2rem rgba(255, 255, 255, 0.25)
+}
+
+/* Set Max Width */
+.vw-15
+{
+    max-width: 15vw;
+}

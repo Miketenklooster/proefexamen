@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TripDK{% endblock %}
+
+{% block header %}
+    <!-- Full Page Image Header with Vertically Centered Content -->
+    <header class="masthead">
+        <div class="container-fluid h-100">
+            <div class="row">
+                <a href="/login" id="login" class="btn btn-lg btn-dark m-3 ml-auto login-button" >Login</a>
+            </div>
+            <div class="row h-25 align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="font-weight-light">Vacation Denmark</h1>
+                    <p class="lead">These are the foto's from when my little brother and I went on a trip in Denmark</p>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+{% block main %}
+        <main>
+            <section class="filter text-center">
+                <button class="my-btn active" id="all">All</button>
+                <button class="my-btn" id="city">City</button>
+                <button class="my-btn" id="beach">Beach</button>
+                <button class="my-btn" id="biking">Biking</button>
+                <button class="my-btn" id="viking">Viking</button>
+                <button class="my-btn" id="landscape">Landscape</button>
+            </section>
+            <!-- The image gallery which width is based of the total screen width -->
+            <section class="masonry">
+                {% for gal in gallery %}
+                    <article class="item {{ gal.category }}">
+                        <a href="../image_gallery/{{ gal.image_name }}" data-fancybox="images" data-caption="{{ gal.info }}">
+                            <img src="../low_res_gallery/{{ gal.image_name }}" class="img-fluid radius">
+                        </a>
+                    </article>
+                {% endfor %}
+            </section>
+        </main>
+{% endblock %}
+
+{% block footer %}
+    <!-- Footer -->
+    <footer class="font-weight-lighter bg-grey mt-5">
+        <!-- Copyright -->
+        <div class="text-center p-3">
+            <p>
+                <small>© 2020 Copyright by Mike & Luke ten Klooster. <br/> All Rights Reserved</small>
+            </p>
+        </div>
+    </footer>
+{% endblock %}

@@ -1,0 +1,102 @@
+/* Add to container-fluid */
+.container-fluid
+{
+    height:100vh;
+    min-height:550px;
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    overflow-y: hidden;
+}
+
+/* Set Border */
+input[type="email"], input[type="password"], input[type="text"]
+{
+    border: 0;
+    border-bottom: 1px solid grey;
+    outline: 0;
+    border-radius: 0;
+}
+
+/* Set Border :focus */
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus
+{
+    box-shadow: none;
+}
+
+/* The Big Rectangle */
+.login-reg-panel
+{
+    position: relative;
+    top: 50vh;
+    transform: translateY(-50%);
+    text-align:center;
+    width:70vw;
+    right:0;left:0;
+    margin:auto;
+    height:400px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Login info box */
+.login-info-box
+{
+    width:30%;
+    padding:0 50px;
+    top:20vh;
+    right:0;
+    position:absolute;
+    text-align:left;
+}
+
+/* The White Panel */
+.white-panel
+{
+    background-color: rgba(255,255, 255, 1);
+    height:500px;
+    position:absolute;
+    top:-50px;
+    width:45%;
+    right:calc(50% - 50px);
+    transition:.3s ease-in-out;
+    z-index:0;
+    box-shadow: 0 0 15px 9px #00000096;
+}
+
+/* Login Box Show */
+.login-show
+{
+    z-index: 1;
+    display:none;
+    opacity:0;
+    transition:0.3s ease-in-out;
+    color:#242424;
+    text-align:left;
+    padding:50px;
+}
+
+/* Show form */
+.show-log-panel
+{
+    display:block;
+    opacity:0.9;
+}
+
+/* Set max-width for certain properties */
+@media (max-width: 991px)
+{
+    .white-panel
+    {
+        background-color: rgba(255,255, 255, 1);
+        height:500px;
+        position:absolute;
+        top:-50px;
+        width:90%;
+        right:calc(20% - 50px);
+        transition:.3s ease-in-out;
+        z-index:0;
+        box-shadow: 0 0 15px 9px #00000096;
+    }
+}

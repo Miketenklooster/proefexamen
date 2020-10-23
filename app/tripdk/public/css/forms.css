@@ -1,0 +1,37 @@
+/* Set Border */
+input[type="email"], input[type="password"], input[type="text"], .label, .select-picker
+{
+    border: 0;
+    border-bottom: 1px solid grey;
+    outline: 0;
+    border-radius: 0;
+}
+
+/* Set Border on focus */
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus, .label:focus, .select-picker:focus
+{
+    box-shadow: none;
+    border-bottom: 1px solid dodgerblue;
+}
+
+/* Set File Input Label */
+.custom-file-label
+{
+    border-radius: 0;
+    outline: 0 none;
+    border-right: inherit;
+}
+
+/* Set File Input Label ::after */
+.custom-file-label::after
+{
+    left: 0;
+    right: auto;
+    border-radius: 10px 0 0;
+}
+
+/* Set Cursor Pointer */
+.pointer
+{
+    cursor: pointer;
+}
